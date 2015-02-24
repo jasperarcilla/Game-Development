@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
-     <Compile Include="Assets\Scripts\PlayerPhysics.cs" />
+     <Compile Include="Assets\Scripts\PlayerJump2D.cs" />
      <Compile Include="Assets\Scripts\Wrap2D.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
