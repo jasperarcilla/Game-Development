@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
 	public Transform leftRight;
 	public Transform upDown;
 
+	private int platNumber;
+
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -37,6 +39,18 @@ public class GameManager : MonoBehaviour {
 	}
 	void PlatformSpawner(float spawnPoint){
 		float x = Random.Range (-2.95f, 2.95f);
-		Instantiate (jump, new Vector3(x,spawnPoint,0),Quaternion.identity);
+		platNumber = Random.Range (1, 5);
+		if(platNumber == 1){
+			Instantiate (regular, new Vector3(x,spawnPoint,0),Quaternion.identity);
+		}
+		if(platNumber == 2){
+			Instantiate (jump, new Vector3(x,spawnPoint,0),Quaternion.identity);
+		}
+		if(platNumber == 3){
+			Instantiate (leftRight, new Vector3(x,spawnPoint,0),Quaternion.identity);
+		}
+		if(platNumber == 4){
+			Instantiate (upDown, new Vector3(x,spawnPoint,0),Quaternion.identity);
+		}
 	}
 }
