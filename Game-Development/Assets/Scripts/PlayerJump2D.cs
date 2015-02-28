@@ -18,7 +18,10 @@ public class PlayerJump2D : MonoBehaviour {
 	
 		grounded = Physics2D.OverlapCircle(groundcheck.position, groundRadius, ground);
 
-		if (grounded) {
+		float velY = rigidbody2D.velocity.y;
+
+
+		if (grounded && velY <= 0 ) {
 						rigidbody2D.velocity = new Vector2 (0, 0);
 
 						rigidbody2D.AddForce (new Vector2 (0, jumpHeight));
