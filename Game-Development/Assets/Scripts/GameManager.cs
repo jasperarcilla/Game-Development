@@ -6,8 +6,16 @@ public class GameManager : MonoBehaviour {
 	public Transform player;
 	float playerHeightY;
 	// Use this for initialization
+
+	public Transform regular;
+	public Transform jump;
+	public Transform leftRight;
+	public Transform upDown;
+
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player").transform;
+
+		PlatformSpawner (-2.75f);
 	}
 	
 	// Update is called once per frame
@@ -26,5 +34,9 @@ public class GameManager : MonoBehaviour {
 				Application.LoadLevel(Application.loadedLevel);
 			}
 		}
+	}
+	void PlatformSpawner(float spawnPoint){
+		float x = Random.Range (-2.95f, 2.95f);
+		Instantiate (jump, new Vector3(x,spawnPoint,0),Quaternion.identity);
 	}
 }
