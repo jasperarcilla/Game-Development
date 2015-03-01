@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
 	public Transform upDown;
 
 	private int platNumber;
+	private float platCheck;
+	private float spawnPlaformsTo;
 
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -23,6 +25,11 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		playerHeightY = player.position.y;
+
+		if (playerHeightY > platCheck) {
+			platformManager();
+		}
+
 		float currentCameraHeight = transform.position.y;
 		float newHeightofCamera = Mathf.Lerp (currentCameraHeight,playerHeightY, Time.deltaTime * 10);
 		if (playerHeightY > currentCameraHeight) 
@@ -37,20 +44,38 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 	}
-	void PlatformSpawner(float spawnPoint){
-		float x = Random.Range (-2.95f, 2.95f);
-		platNumber = Random.Range (1, 5);
-		if(platNumber == 1){
-			Instantiate (regular, new Vector3(x,spawnPoint,0),Quaternion.identity);
+
+	void platformManager(){
+		platCheck = player.position.y + 15;
+		PlatformSpawner (platCheck + 15);
+	}
+
+	void PlatformSpawner(float floatvalue){
+
+		float y = spawnPlaformsTo;
+
+		while(y <= floatvalue){
+			float x = Random.Range (-2.95f, 2.95f);
+
+			platNumber = Random.Range (1, 5);
+
+			Vector2 posXY = new Vector2(x,y);
+
+			if(platNumber == 1){
+				Instantiate (regular,posXY,Quaternion.identity);
+			}
+			if(platNumber == 2){
+				Instantiate (jump,posXY,Quaternion.identity);
+			}
+			if(platNumber == 3){
+				Instantiate (leftRight,posXY,Quaternion.identity);
+			}
+			if(platNumber == 4){
+				Instantiate (upDown,posXY,Quaternion.identity);
+			}
+			y += Random.Range(.5f,1.75f);
+			Debug.Log("Spawn Platform");
 		}
-		if(platNumber == 2){
-			Instantiate (jump, new Vector3(x,spawnPoint,0),Quaternion.identity);
-		}
-		if(platNumber == 3){
-			Instantiate (leftRight, new Vector3(x,spawnPoint,0),Quaternion.identity);
-		}
-		if(platNumber == 4){
-			Instantiate (upDown, new Vector3(x,spawnPoint,0),Quaternion.identity);
-		}
+		spawnPlaformsTo = floatvalue;
 	}
 }
