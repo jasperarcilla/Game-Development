@@ -43,6 +43,9 @@ public class GameManager : MonoBehaviour {
 				Application.LoadLevel(Application.loadedLevel);
 			}
 		}
+	if (playerHeightY > OnGUI2D.score) {
+			OnGUI2D.score = (int)playerHeightY;
+		}
 	}
 
 	void platformManager(){
