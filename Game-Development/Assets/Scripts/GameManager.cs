@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+	public static OnGUI2D OG2D;
 	public Transform player;
 	float playerHeightY;
 	// Use this for initialization
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour {
 		{
 			if(playerHeightY < (currentCameraHeight - 5.25f))
 			{
+				OnGUI2D.OG2D.checkhighscore();
 				Application.LoadLevel(Application.loadedLevel);
 			}
 		}
