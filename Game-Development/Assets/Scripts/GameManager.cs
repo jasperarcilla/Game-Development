@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour {
 			if(playerHeightY < (currentCameraHeight - 5.25f))
 			{
 				OnGUI2D.OG2D.checkhighscore();
-				Application.LoadLevel(Application.loadedLevel);
+				Application.LoadLevel("GameOver");
 			}
 		}
 	if (playerHeightY > OnGUI2D.score) {
