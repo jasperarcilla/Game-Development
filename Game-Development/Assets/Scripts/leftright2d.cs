@@ -14,10 +14,10 @@ public class leftright2d : MonoBehaviour {
 		else {
 			transform.position -= Vector3.right	* platformspeed * Time.deltaTime;
 		}
-		if (transform.position.x >= 6.68f) {
+		if (transform.position.x >= 5.6f) {
 			endpoint = false;
 				}
-		if (transform.position.x <= -6.68f) {
+		if (transform.position.x <= -5.6f) {
 			endpoint = true;
 		}
 	}
