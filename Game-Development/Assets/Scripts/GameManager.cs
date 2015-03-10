@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour {
 			if(playerHeightY < (currentCameraHeight - 5.25f))
 			{
 				OnGUI2D.OG2D.checkhighscore();
-				Application.LoadLevel(Application.loadedLevel);
+				Application.LoadLevel("GameOver");
 			}
 		}
 	if (playerHeightY > OnGUI2D.score) {
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour {
 		float y = spawnPlaformsTo;
 
 		while(y <= floatvalue){
-			float x = Random.Range (-2.95f, 2.95f);
+			float x = Random.Range (-6.68f, 6.68f);
 
 			platNumber = Random.Range (1, 5);
 
