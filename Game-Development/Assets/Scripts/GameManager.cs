@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour {
 		float y = spawnPlaformsTo;
 
 		while(y <= floatvalue){
-			float x = Random.Range (-5.6f, 5.6f);
+			float x = Random.Range (-7.88f, 7.88f);
 
 			platNumber = Random.Range (1, 5);
 

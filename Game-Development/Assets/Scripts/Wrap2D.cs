@@ -8,14 +8,14 @@ public class Wrap2D : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		if (transform.position.x <= -6.68f) {
+		if (transform.position.x <= -8.77f) {
 
-						transform.position = new Vector3 (6.68f, transform.position.y, transform.position.z);
+						transform.position = new Vector3 (8.77f, transform.position.y, transform.position.z);
 		
 				} 
-		else if (transform.position.x >= 6.68f) {
+		else if (transform.position.x >= 8.77f) {
 				
-						transform.position = new Vector3 (-6.68f, transform.position.y, transform.position.z);
+			transform.position = new Vector3 (-8.77f, transform.position.y, transform.position.z);
 				}
 	
 	}
