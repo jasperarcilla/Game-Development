@@ -4,6 +4,7 @@ using System.Collections;
 public class JumpPlat2D : MonoBehaviour {
 
 	public float jumpHeight = 500;
+	public AudioClip audioClip;
 	float VelY;
 	// Update is called once per frame
 	void Update () {
@@ -15,6 +16,8 @@ public class JumpPlat2D : MonoBehaviour {
 		{
 			rigidbody2D.velocity = new Vector2(0,0);
 			rigidbody2D.AddForce(new Vector2(0,jumpHeight));
+			audio.clip = audioClip;
+			audio.Play();
 		}
 	}
 }
