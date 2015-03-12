@@ -11,6 +11,8 @@ public class PlayerJump2D : MonoBehaviour {
 	public float groundRadius = .2f;
 	public LayerMask ground;
 
+	public AudioClip audioClip;
+
 	// Use this for initialization
 	
 	// Update is called once per frame
@@ -25,6 +27,14 @@ public class PlayerJump2D : MonoBehaviour {
 						rigidbody2D.velocity = new Vector2 (0, 0);
 
 						rigidbody2D.AddForce (new Vector2 (0, jumpHeight));
+
+			PlaySound ();
 				}
 	}
+
+	void PlaySound (){
+		audio.clip = audioClip;
+		audio.Play();
+	}
+
 }
