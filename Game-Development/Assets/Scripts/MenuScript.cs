@@ -23,7 +23,7 @@ public class MenuScript : MonoBehaviour
 		// Center in X, 2/3 of the height in Y
 		Rect buttonRect = new Rect(
 			Screen.width / 2 - (buttonWidth / 1.8f),
-			(2 * Screen.height / 3.5f) - (buttonHeight / 2),
+			(2 * Screen.height / 4.8f) - (buttonHeight / 2),
 			buttonWidth,
 			buttonHeight
 			);
